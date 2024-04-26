@@ -1,3 +1,4 @@
 export const environment = {
-    kafkaBrokers: ['broker:9092']
+    kafkaBrokers: ['localhost:9092'],
+    topic: 'topic-name'
 }
