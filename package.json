@@ -20,6 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@goopen/nestjs-schema-registry": "^1.1.0",
+    "@kafkajs/confluent-schema-registry": "^3.3.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/microservices": "^10.3.8",

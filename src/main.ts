@@ -12,10 +12,11 @@ async function bootstrap() {
         options: {
           client: {
             clientId: `consumer-${uuidv4()}`,
-            brokers: environment.kafkaBrokers,
+            brokers: environment.kafka.brokers,
           },
           consumer: {
-            groupId: 'kafka-nest-consumer',
+            groupId: environment.kafka.groupId,
+            allowAutoTopicCreation: true,
           },
         },
       },

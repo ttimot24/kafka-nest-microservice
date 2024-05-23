@@ -1,4 +1,12 @@
 export const environment = {
-    kafkaBrokers: ['localhost:9092'],
-    topic: 'topic-name'
+    kafka: {
+        brokers: ['localhost:9092'],
+        groupId: 'kafka-nest-consumer',
+        topic: 'mndwrk-zilla-response', 
+    },
+    schemaRegistry: {
+        url: 'http://localhost:8081',
+        username: '',
+        password: ''
+    }
 }

@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nestjs-kafka:
+    image: webentity/nestjs-kafka:latest
+    build: .
+    restart: always
+    ports:
+      - "82:80"
+    deploy:
+      resources:
+        limits:
+          memory: 32M
+        reservations:
+          cpus: '0.75'
+          memory: 16M
+
+networks:
+  default:
+    name: mndwrk-network
+    external: true
