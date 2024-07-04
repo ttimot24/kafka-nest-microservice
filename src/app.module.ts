@@ -3,9 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SchemaRegistryModule } from '@goopen/nestjs-schema-registry';
 import { environment } from './environment/environment';
+import { PrometheusModule } from '@willsoto/nestjs-prometheus';
 
 @Module({
   imports: [
+    PrometheusModule.register(),
     SchemaRegistryModule.register({
       isGlobal: true,
       host: environment.schemaRegistry.url,

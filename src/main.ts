@@ -5,8 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { environment } from './environment/environment';
 
 async function bootstrap() {
-  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-      AppModule,
+
+  const app = await NestFactory.create(AppModule);
+
+  const microservices = app.connectMicroservice<MicroserviceOptions>(
       {
         transport: Transport.KAFKA,
         options: {
@@ -21,7 +23,10 @@ async function bootstrap() {
         },
       },
     );
-    app.listen();
+
+    await app.startAllMicroservices();
+
+    await app.listen(3001);
 }
 
 bootstrap();
